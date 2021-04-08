@@ -4,13 +4,18 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import ItemTraller from './src/screens/Traller/modules/itemTraller';
 
-
-export default class index extends Component<any, any> {
+export default class Test extends Component<any, any> {
   render() {
     return (
       <View style={Styles.container}>
-        <Text> textInComponent </Text>
+        <ItemTraller
+          source={require('../AppMovie/src/assets/images/hardcore1.jpg')}
+          name={'Batman v Superman: Dawn of Justice - Official Trailer 2 [HD]'}
+          size={'HD'}
+          type={'Clip'}
+        />
       </View>
     );
   }
@@ -20,5 +25,6 @@ const Styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'red',
   },
 });
