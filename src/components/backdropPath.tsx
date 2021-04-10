@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {
   Text,
-  View,
   StyleSheet,
   ImageBackground,
   TouchableOpacity,
@@ -17,8 +16,12 @@ export default class BackdropPath extends Component<any, any> {
     const {image, title, onPress} = this.props;
     return (
       <ImageBackground source={image} style={Styles.container}>
-        <TouchableOpacity onPress={onPress}>
-          <Feather name="arrow-left" size={wp('9')} color={Colors.white} />
+        <TouchableOpacity onPress={onPress} style={{width: wp(10)}}>
+          <Feather
+            name="arrow-left"
+            style={Styles.iconFeather}
+            color={Colors.white}
+          />
         </TouchableOpacity>
         <Text style={Styles.title} numberOfLines={1}>
           {title}
@@ -37,10 +40,15 @@ const Styles = StyleSheet.create({
     color: Colors.white,
     fontSize: wp('10'),
     fontWeight: 'bold',
-    width: wp(60),
+    width: wp(100),
     borderRadius: wp('2'),
     marginBottom: hp('2'),
     textShadowRadius: 10,
     textShadowColor: 'black',
+  },
+  iconFeather: {
+    fontSize: wp('10'),
+    borderColor: Colors.black,
+    // borderRadius: wp('10'),
   },
 });

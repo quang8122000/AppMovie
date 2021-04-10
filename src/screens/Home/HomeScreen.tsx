@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, FlatList, Dimensions} from 'react-native';
+import {Text, View, StyleSheet, FlatList, TextInput} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -7,16 +7,23 @@ import {
 import {Colors} from '../../configs/style';
 import ItemViewMovie from '../../components/itemViewMovie';
 import {connect} from 'react-redux';
-import {homeAction} from '../../redux/home/action';
+import {homeAction} from '../../redux/movie/action';
+import {SearchBar} from 'react-native-elements';
 class HomeScreen extends Component<any, any> {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      year: 2021,
+    };
   }
 
   componentDidMount() {
-    this.props.getALLMovies();
+    this.props.getALLMovies(this.state.year);
   }
+  onChangeText = text => {
+    this.setState({year: text});
+  };
+
   onPress = item => {
     this.props.navigation.navigate('Details', item);
   };
@@ -38,6 +45,10 @@ class HomeScreen extends Component<any, any> {
     console.log('HomeallMovie', this.props.allMovie);
     return (
       <View style={Styles.container}>
+        <TextInput
+          onChangeText={text => this.props.getALLMovies(text)}
+          placeholder="Nhập Năm"
+        />
         <FlatList
           horizontal={false}
           data={this.props.allMovie.results}
@@ -49,12 +60,12 @@ class HomeScreen extends Component<any, any> {
     );
   }
 }
+
 const mapStateFromProps = (state: any) => {
   return {
     allMovie: state.movie.allMovie,
   };
 };
-
 export default connect(mapStateFromProps, homeAction)(HomeScreen);
 const Styles = StyleSheet.create({
   container: {
