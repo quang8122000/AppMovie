@@ -4,15 +4,20 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-// import ItemYoutube from './src/components/ItemYoutube';
 import ButtonCustom from './src/components/buttonCustom';
-import IItemActor from './src/screens/Details/modules/itemActor';
+import IItemActor from './src/screens/Details/modules/Cast/ItemCast';
 
 export default class Test extends Component<any, any> {
   render() {
+    let url = 'https://image.tmdb.org/t/p/w500';
+
     return (
       <View style={Styles.container}>
-        <ButtonCustom />
+        <IItemActor
+          original_name={'Sam Levinson'}
+          profile_path={{uri: `${url}/${'/unyjIDs02a9ghtZhnajoAKKGzhW.jpg'}`}}
+          job={'Producer'}
+        />
       </View>
     );
   }
@@ -22,6 +27,6 @@ const Styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: 'gray',
   },
 });

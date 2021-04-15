@@ -30,11 +30,11 @@ export const getAllActors = ($acton : any) =>{
     ofType(types.GET_All_ACTOR),
     mergeMap((act: any) => {
       return $axios.api
-      .get('/3/movie/527774/credits?api_key=2c4916f2a93252ac7140372c475509c6&language=en-US')
+      .get(`/3/movie/${act?.payload}/credits?api_key=2c4916f2a93252ac7140372c475509c6&language=en-US`)
       .then((rs : any)=>{
         const {data} = rs;
         console.log('getALLActor', data);
-        return  homeAction.getALLMoviesSuccess(data);
+        return  homeAction.getAllActorsSuccess(data);
 
       })
       .catch((err : any) =>{

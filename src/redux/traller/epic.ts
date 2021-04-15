@@ -1,5 +1,5 @@
 import {$axios} from '../../configs/api'
-import{trallerAction,types}  from '../traller/action'
+import{trallerAction,types}  from './action'
 import {ofType} from 'redux-observable';
 import {mergeMap} from 'rxjs/operators';
 

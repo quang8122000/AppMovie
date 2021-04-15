@@ -6,6 +6,8 @@ import {
   FlatList,
   ScrollView,
   Image,
+  TouchableOpacity,
+  Alert,
 } from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -17,6 +19,7 @@ import StarRating from 'react-native-star-rating';
 import ItemTraller from '../../screens/Details/modules/itemTraller';
 import {connect} from 'react-redux';
 import {trallerAction} from '../../redux/traller/action';
+import {isEmpty} from 'lodash';
 
 class DetailsScreen extends Component<any, any> {
   item: any;
@@ -27,7 +30,6 @@ class DetailsScreen extends Component<any, any> {
   }
 
   componentDidMount() {
-    console.log('id', this.item.id);
     this.props.getALLTrallers(this.item.id);
   }
   renderItem({item}) {
@@ -40,7 +42,13 @@ class DetailsScreen extends Component<any, any> {
       />
     );
   }
-
+  onPress = item => {
+    if (isEmpty(this.props.allTraller.youtube)) {
+      Alert.alert('OPP!', 'Không có Traller nha');
+    } else {
+      this.props.navigation.navigate('ListAllTraller', item);
+    }
+  };
   render() {
     // console.log('arrTraller', this.props.allTraller.youtube[3].source);
     // console.log('source', this.youtube.source);
@@ -56,11 +64,11 @@ class DetailsScreen extends Component<any, any> {
       vote_average,
       id,
     } = this.item;
-
     return (
       <>
         <View>
           <BackdropPath
+            idMovie={this.item.id}
             image={{uri: `${url}/${backdrop_path}`}}
             title={original_title}
             onPress={() => this.props.navigation.goBack()}
@@ -98,15 +106,20 @@ class DetailsScreen extends Component<any, any> {
               <Text style={Styles.textContent}>{vote_count}</Text>
             </View>
             <View style={Styles.flatList}>
-              <Text
-                style={{
-                  color: '#D4AC0D',
-                  fontWeight: 'bold',
-                  fontSize: wp(6),
-                  marginBottom: hp('2'),
-                }}>
-                Official Traller
-              </Text>
+              <View style={Styles.rowOfficial}>
+                <Text
+                  style={{
+                    color: '#D4AC0D',
+                    fontWeight: 'bold',
+                    fontSize: wp(6),
+                    marginBottom: hp('2'),
+                  }}>
+                  Official Traller
+                </Text>
+                <TouchableOpacity onPress={() => this.onPress(this.item)}>
+                  <Text style={Styles.textShowAll}>Show All</Text>
+                </TouchableOpacity>
+              </View>
               <FlatList
                 data={this.props.allTraller.youtube}
                 renderItem={this.renderItem}
@@ -160,5 +173,17 @@ const Styles = StyleSheet.create({
   flatList: {
     height: hp('40'),
     // backgroundColor: 'red',
+  },
+  rowOfficial: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    // backgroundColor: 'yellow',
+  },
+  textShowAll: {
+    color: Colors.primaryLight,
+    fontSize: wp('5'),
+    marginBottom: hp('2'),
+    textDecorationLine: 'underline',
   },
 });

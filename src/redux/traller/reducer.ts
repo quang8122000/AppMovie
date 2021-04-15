@@ -1,4 +1,4 @@
-import {types} from '../traller/action'
+import {types} from './action'
 const initState = {
     allTraller:[],
 }

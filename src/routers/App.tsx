@@ -3,7 +3,7 @@ import {View, Text, Image, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../screens/Home/HomeScreen';
-import TrallerScreen from '../screens/Traller/TrallerSrceen';
+import NewMovieScreen from '../screens/MovieHot/NewMovieScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import {
@@ -37,10 +37,10 @@ function App() {
         }}
       />
       <Tab.Screen
-        name="Traller"
-        component={TrallerScreen}
+        name="NewMovie"
+        component={NewMovieScreen}
         options={{
-          tabBarLabel: 'Traller',
+          tabBarLabel: 'HotMovie',
           tabBarIcon: ({focused}) => (
             <View style={Styles.view}>
               <Image

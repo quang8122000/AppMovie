@@ -12,23 +12,15 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {Colors} from '../configs/style';
-const HEIGHT = Dimensions.get('window').height;
-const WIDTH = Dimensions.get('window').width;
+
 export default class ItemViewMovie extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {};
   }
-  // componentDidUpdate(preState, state) {
-  //   if (HEIGHT < WIDTH) {
-  //     this.setState({width: hp(15), height: wp(25)});
-  //   } else {
-  //     this.setState({width: wp(15), height: hp(25)});
-  //   }
-  // }
 
   render() {
-    const {image, title, content, release_date, onPress} = this.props;
+    const {image, title, release_date, onPress} = this.props;
 
     return (
       <TouchableOpacity style={Styles.container} onPress={onPress}>
@@ -68,7 +60,6 @@ const Styles = StyleSheet.create({
     textAlign: 'center',
   },
   ViewImage: {
-    // backgroundColor: 'red',
     justifyContent: 'center',
   },
 
@@ -79,9 +70,6 @@ const Styles = StyleSheet.create({
     textAlign: 'center',
   },
   allText: {
-    // backgroundColor: 'red',.
-    // height: wp('25'),
-    // marginTop: hp('1.5'),
     justifyContent: 'center',
     flexDirection: 'column',
     alignSelf: 'center',

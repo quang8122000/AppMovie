@@ -10,6 +10,7 @@ import {Provider} from 'react-redux';
 import React from 'react';
 import store from './src/redux/store';
 import ModalDetal from './src/screens/Home/ModalDetal';
+import ModalCast from './src/screens/Details/modules/Cast/modalCast';
 import DetailsScreen from './src/screens/Details/DetailsScreen';
 import Test from '../AppMovie/Test';
 
@@ -23,8 +24,8 @@ const app = () => (
       }
     /> */}
     {/* <DetailsScreen /> */}
-    {/* <Test /> */}
     <Home />
+    {/* <Home /> */}
     {/* <ModalDetal
       image={require('./src/assets/images/hardcore1.jpg')}
       title={'Hardcore Henry'}

@@ -28,7 +28,6 @@ class HomeScreen extends Component<any, any> {
     this.props.navigation.navigate('Details', item);
   };
   renderItem(item, index) {
-    console.log('item', item);
     let url = 'https://image.tmdb.org/t/p/w500';
     return (
       <ItemViewMovie
@@ -42,12 +41,21 @@ class HomeScreen extends Component<any, any> {
   }
 
   render() {
-    console.log('HomeallMovie', this.props.allMovie);
     return (
       <View style={Styles.container}>
         <TextInput
           onChangeText={text => this.props.getALLMovies(text)}
           placeholder="Nhập Năm"
+          autoCompleteType={'cc-number'}
+          placeholderTextColor={'black'}
+          style={{
+            height: hp(5),
+            width: wp(80),
+            marginVertical: hp(2),
+            borderRadius: wp(3),
+            backgroundColor: Colors.white,
+            color: 'black',
+          }}
         />
         <FlatList
           horizontal={false}
@@ -69,7 +77,6 @@ const mapStateFromProps = (state: any) => {
 export default connect(mapStateFromProps, homeAction)(HomeScreen);
 const Styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.black,
