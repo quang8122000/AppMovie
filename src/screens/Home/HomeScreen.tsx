@@ -7,6 +7,7 @@ import {
   TextInput,
   ActivityIndicator,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -16,6 +17,7 @@ import {Colors} from '../../configs/style';
 import ItemViewMovie from '../../components/itemViewMovie';
 import {connect} from 'react-redux';
 import {homeAction} from '../../redux/movie/action';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 class HomeScreen extends Component<any, any> {
   constructor(props) {
     super(props);
@@ -46,17 +48,16 @@ class HomeScreen extends Component<any, any> {
     );
   }
   Search = () => {
-    if (this.state.year != this.state.Result) {
-      this.props.getALLMovies({year: this.state.year});
-      this.setState({Result: this.state.year, page: 1});
+    const {year, Result, page} = this.state;
+    if (year != Result) {
+      this.props.getALLMovies({year: year});
+      this.setState({Result: year, page: 1});
     } else {
-      this.props.getALLMovies({year: this.state.year, page: this.state.page});
+      this.props.getALLMovies({year: year, page: page});
     }
   };
 
   render() {
-    console.log('ss3', this.props);
-
     return (
       <View style={Styles.container}>
         <View style={Styles.textInputSearch}>
@@ -79,26 +80,72 @@ class HomeScreen extends Component<any, any> {
           </TouchableOpacity>
         </View>
         <View style={Styles.viewYearandPage}>
-          <Text style={Styles.year}>Result: {this.state.Result}</Text>
-          <Text
-            onPress={() => {
-              console.log('year', this.state.year);
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <Text style={Styles.year}>Result:</Text>
+            <Text
+              style={{
+                color: Colors.yellow,
+                fontSize: wp(4),
+                fontWeight: '900',
+              }}>
+              {' '}
+              {this.state.Result}
+            </Text>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              width: wp(35),
+              justifyContent: 'space-around',
+            }}>
+            <TouchableOpacity
+              onPress={() => {
+                if (this.state.page > 1) {
+                  this.setState({page: this.state.page - 1});
+                  if (this.state.Result != this.state.year) {
+                    return this.props.getALLMovies({
+                      year: !!this.state.Result || 2021,
+                      page: this.state.page - 1,
+                    });
+                  }
+                  this.props.getALLMovies({
+                    year: this.state.Result,
+                    page: this.state.page - 1,
+                  });
+                } else {
+                  Alert.alert('Error !!!!', 'No has page = 0');
+                }
+              }}>
+              <FontAwesome5
+                name={'backward'}
+                color={Colors.white}
+                size={wp(6)}
+              />
+            </TouchableOpacity>
+            <Text style={Styles.page}>Page: {this.state.page}</Text>
 
-              this.setState({page: this.state.page + 1});
-              if (this.state.Result != this.state.year) {
-                return this.props.getALLMovies({
-                  year: !!this.state.Result || 2021,
+            <TouchableOpacity
+              onPress={() => {
+                this.setState({page: this.state.page + 1});
+                if (this.state.Result != this.state.year) {
+                  return this.props.getALLMovies({
+                    year: !!this.state.Result || 2021,
+                    page: this.state.page + 1,
+                  });
+                }
+                this.props.getALLMovies({
+                  year: this.state.Result,
                   page: this.state.page + 1,
                 });
-              }
-              this.props.getALLMovies({
-                year: this.state.Result,
-                page: this.state.page + 1,
-              });
-            }}
-            style={Styles.page}>
-            Page: {this.state.page}
-          </Text>
+              }}>
+              <FontAwesome5
+                name={'forward'}
+                color={Colors.white}
+                size={wp(6)}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
 
         <View style={Styles.flatList}>
@@ -160,9 +207,7 @@ const Styles = StyleSheet.create({
   },
   page: {
     color: Colors.white,
-    fontSize: wp(5),
-    fontWeight: 'bold',
-    marginRight: wp(2),
+    fontSize: wp(4),
   },
   viewYearandPage: {
     flexDirection: 'row',

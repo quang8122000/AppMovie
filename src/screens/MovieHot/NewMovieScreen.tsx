@@ -52,10 +52,9 @@ class NewMovieScreen extends Component<any, any> {
 
   render() {
     const {allNewMovie} = this.props;
-    console.log('ss', this.props);
-
     return (
       <View style={Styles.container}>
+        <Text style={Styles.textTitle}>Popular Movie</Text>
         <FlatList
           data={allNewMovie.results}
           renderItem={({item, index}) => this.rederItem(item, index)}
@@ -78,5 +77,14 @@ const Styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.black,
+    width: '100%',
+  },
+  textTitle: {
+    fontSize: wp(6),
+    color: Colors.white,
+    fontWeight: 'bold',
+    textShadowRadius: 20,
+    textShadowColor: Colors.gray,
+    marginVertical: hp(2),
   },
 });

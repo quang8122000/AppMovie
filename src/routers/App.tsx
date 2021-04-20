@@ -1,7 +1,6 @@
 import * as React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {View, Image, StyleSheet} from 'react-native';
+
 import HomeScreen from '../screens/Home/HomeScreen';
 import NewMovieScreen from '../screens/MovieHot/NewMovieScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -19,8 +18,10 @@ function App() {
     <Tab.Navigator
       initialRouteName={'Home'}
       tabBarOptions={{
-        activeTintColor: Colors.primaryDark,
+        activeTintColor: Colors.white,
+        inactiveTintColor: Colors.black,
         labelStyle: {fontSize: wp('3'), fontWeight: 'bold'},
+        tabStyle: {backgroundColor: Colors.primaryLight, width: wp(10)},
       }}>
       <Tab.Screen
         name="Home"
@@ -68,7 +69,7 @@ const Styles = StyleSheet.create({
     alignItems: 'center',
   },
   img: {
-    height: wp('6'),
-    width: wp('6'),
+    height: wp('5'),
+    width: wp('5'),
   },
 });

@@ -142,8 +142,6 @@ export default connect(mapStateFromProps, trallerAction)(DetailsScreen);
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
     backgroundColor: Colors.gray,
     padding: wp('2'),
   },
@@ -172,13 +170,11 @@ const Styles = StyleSheet.create({
   },
   flatList: {
     height: hp('40'),
-    // backgroundColor: 'red',
   },
   rowOfficial: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    // backgroundColor: 'yellow',
   },
   textShowAll: {
     color: Colors.primaryLight,

@@ -13,8 +13,7 @@ export default class ItemNewTrallerHorizontal extends Component<any, any> {
     const {title, backdrop_path, overview, onPress} = this.props;
 
     return (
-      <TouchableOpacity style={Styles.container} onPress={onPress
-      }>
+      <TouchableOpacity style={Styles.container} onPress={onPress}>
         <View style={{width: '70%'}}>
           <Image
             source={backdrop_path}
@@ -48,7 +47,7 @@ const Styles = StyleSheet.create({
     borderRadius: wp(2),
     marginVertical: hp(2),
     justifyContent: 'center',
-    padding: wp(2),
+    padding: wp(4),
   },
   backdrop_path: {
     height: hp(20),

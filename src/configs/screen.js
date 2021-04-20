@@ -1,9 +1,0 @@
-const SCREENS = {
-	HOME: "HOME",
-	STYLES: "STYLES",
-	COMPONENT: "COMPONENT",
-	PROPS: "PROPS",
-	RESTFUL: "RESTFUL"
-}
-
-export default SCREENS;
