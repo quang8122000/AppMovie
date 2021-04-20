@@ -18,7 +18,10 @@ export default class BackdropPath extends Component<any, any> {
     const {image, title, onPress, idMovie} = this.props;
     console.log('idMovie', idMovie);
     return (
-      <ImageBackground source={image} style={Styles.container}>
+      <ImageBackground
+        resizeMode={'cover'}
+        source={image}
+        style={Styles.container}>
         <View>
           <TouchableOpacity onPress={onPress} style={{width: wp(10)}}>
             <Feather
@@ -55,7 +58,6 @@ const Styles = StyleSheet.create({
     fontWeight: 'bold',
     width: wp(60),
     borderRadius: wp('2'),
-    // marginBottom: hp('2'),
     textShadowRadius: 10,
     textShadowColor: 'black',
     paddingLeft: wp('2'),
@@ -63,6 +65,5 @@ const Styles = StyleSheet.create({
   iconFeather: {
     fontSize: wp('10'),
     borderColor: Colors.black,
-    // borderRadius: wp('10'),
   },
 });

@@ -1,10 +1,10 @@
 import {combineEpics} from 'redux-observable';
-import {getALLMovie} from'../redux/movie/epic'
-import {getAllTraller} from '../redux/traller/epic'
-import { getAllActors } from './movie/epic';
+import {getALLMovies, getAllActors, getAllNewMovies} from '../redux/movie/epic';
+import {getAllTraller} from '../redux/traller/epic';
 const rootEpic = combineEpics(
-    getALLMovie,
-    getAllTraller,
-    getAllActors
-)
+  getALLMovies,
+  getAllTraller,
+  getAllActors,
+  getAllNewMovies,
+);
 export default rootEpic;

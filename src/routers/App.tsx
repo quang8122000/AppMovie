@@ -17,6 +17,7 @@ const Tab = createBottomTabNavigator();
 function App() {
   return (
     <Tab.Navigator
+      initialRouteName={'Home'}
       tabBarOptions={{
         activeTintColor: Colors.primaryDark,
         labelStyle: {fontSize: wp('3'), fontWeight: 'bold'},
@@ -37,7 +38,7 @@ function App() {
         }}
       />
       <Tab.Screen
-        name="NewMovie"
+        name="HotMovie"
         component={NewMovieScreen}
         options={{
           tabBarLabel: 'HotMovie',

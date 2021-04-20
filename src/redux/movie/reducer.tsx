@@ -2,6 +2,7 @@ import {types} from './action';
 const initState = {
   allMovie: [],
   allActor: [],
+  allNewMovie: [],
 };
 
 export const reducerMovie: any = (state = initState, actions: any) => {
@@ -24,6 +25,15 @@ export const reducerMovie: any = (state = initState, actions: any) => {
     }
     case types.GET_All_ACTOR_FAIL: {
       return {...state, allActor: payload};
+    }
+    case types.GET_ALL_NEW_MOVIE: {
+      return {...state, allNewMovie: []};
+    }
+    case types.GET_ALL_NEW_MOVIE_SUCCESS: {
+      return {...state, allNewMovie: payload};
+    }
+    case types.GET_ALL_NEW_MOVIE_FAIL: {
+      return {...state, allNewMovie: payload};
     }
   }
   return state;

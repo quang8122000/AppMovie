@@ -25,8 +25,7 @@ export default class ItemTraller extends Component<any, any> {
         />
         <View style={Styles.allContent}>
           <Text style={Styles.name} numberOfLines={1}>
-            {' '}
-            {name}{' '}
+            {name}
           </Text>
         </View>
       </View>

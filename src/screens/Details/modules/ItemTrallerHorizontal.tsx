@@ -39,6 +39,7 @@ export default class ItemTrallerHorizontal extends Component<any, any> {
             height={hp('20')}
             webViewStyle={Styles.Styleimg}
             mute={true}
+            forceAndroidAutoplay={true}
             onError={err => console.log('Error', err)}
           />
         </View>

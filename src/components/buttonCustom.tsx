@@ -13,7 +13,7 @@ import {
 } from 'react-native-responsive-screen';
 import FontAwessome5 from 'react-native-vector-icons/FontAwesome5';
 import ModalCast from '../screens/Details/modules/Cast/modalCast';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import {Colors} from '../configs/style';
 export default class ButtonCustom extends Component<any, any> {
   constructor(props) {
@@ -51,10 +51,17 @@ export default class ButtonCustom extends Component<any, any> {
               onPress={() => this.setState({modalVisible: false})}
               style={{
                 flexDirection: 'row',
-                alignItems: 'center',
+                alignItems: 'center', 
               }}>
-              <Text style={Styles.textOut}>Out </Text>
-              <FontAwesome name={'close'} color={Colors.black} size={wp(10)} />
+              <AntDesign name={'back'} color={Colors.black} size={wp(10)} />
+              <Text
+                style={{
+                  fontSize: wp(6),
+                  color: Colors.black,
+                  fontWeight: 'bold',
+                }}>
+                The actors in the movie
+              </Text>
             </TouchableOpacity>
             <ModalCast idMovie={idMovie} />
           </View>

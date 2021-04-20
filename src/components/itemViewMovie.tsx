@@ -43,7 +43,7 @@ const Styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: Colors.gray,
     height: hp('30'),
-    width: wp('30'),
+    width: wp('29'),
     marginBottom: hp('1'),
     borderRadius: wp('2'),
     marginRight: wp('2'),

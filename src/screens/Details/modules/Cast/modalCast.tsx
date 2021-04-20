@@ -33,7 +33,7 @@ class ModalCast extends Component<any, any> {
         <FlatList
           data={this.props.allActor.cast}
           renderItem={({item}) => this.renderItem(item)}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.order}
         />
       </View>
     );
@@ -50,7 +50,7 @@ const Styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Colors.black,
+    backgroundColor: Colors.gray,
     width: wp(50),
     height: hp(80),
     borderRadius: wp(2),
