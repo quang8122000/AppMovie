@@ -4,29 +4,29 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import ButtonCustom from './src/components/buttonCustom';
-import IItemActor from './src/screens/Details/modules/Cast/ItemCast';
+
+import YoutubePlayer from 'react-native-youtube-iframe';
 
 export default class Test extends Component<any, any> {
   render() {
-    let url = 'https://image.tmdb.org/t/p/w500';
-
     return (
       <View style={Styles.container}>
-        <IItemActor
-          original_name={'Sam Levinson'}
-          profile_path={{uri: `${url}/${'/unyjIDs02a9ghtZhnajoAKKGzhW.jpg'}`}}
-          job={'Producer'}
+        <YoutubePlayer
+          videoId={'s-MUzvASr8s'}
+          height={hp(30)}
+          webViewStyle={Styles.abc}
+          play={false}
+          mute={true}
+          forceAndroidAutoplay={true}
+          onError={err => console.log('Error', err)}
         />
       </View>
     );
   }
 }
 const Styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'gray',
+  container: {},
+  abc: {
+    width: wp(100),
   },
 });

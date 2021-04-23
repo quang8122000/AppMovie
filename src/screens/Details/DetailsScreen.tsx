@@ -30,6 +30,7 @@ class DetailsScreen extends Component<any, any> {
   }
 
   componentDidMount() {
+    console.log('This mount', this.item);
     this.props.getALLTrallers(this.item.id);
   }
   renderItem({item}) {

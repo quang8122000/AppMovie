@@ -28,11 +28,12 @@ class HomeScreen extends Component<any, any> {
     };
   }
 
-  componentDidMount() {
-    this.props.getALLMovies({year: this.state.year, page: this.state.page});
-  }
+  // componentDidMount() {
+  //   this.props.getALLMovies();
+  // }
 
   onPress = item => {
+    console.log('onPressitem', item);
     this.props.navigation.navigate('Details', item);
   };
   renderItem(item, index) {

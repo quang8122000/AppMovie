@@ -17,27 +17,22 @@ import YoutubePlayer from 'react-native-youtube-iframe';
 export default class ItemTrallerHorizontal extends Component<any, any> {
   constructor(props) {
     super(props);
-    this.state = {
-      isPlaying: false,
-    };
+    this.state = {};
   }
-  onPressPlay = () => {
-    const {isPlaying} = this.state;
-    this.setState({isPlaying: !isPlaying});
-  };
+  // onPressPlay = () => {
+  //   const {isPlaying} = this.state;
+  //   this.setState({isPlaying: !isPlaying});
+  // };
   render() {
     const {title, source, size, type} = this.props;
 
     return (
-      <TouchableOpacity
-        style={Styles.container}
-        onPress={() => this.onPressPlay()}>
+      <View style={Styles.container}>
         <View style={{width: '70%'}}>
           <YoutubePlayer
-            play={this.state.isPlaying}
+            play={false}
             videoId={source}
             height={hp('20')}
-            webViewStyle={Styles.Styleimg}
             mute={true}
             forceAndroidAutoplay={true}
             onError={err => console.log('Error', err)}
@@ -50,7 +45,7 @@ export default class ItemTrallerHorizontal extends Component<any, any> {
           <Text style={Styles.textTitle}>Size:{size} </Text>
           <Text style={Styles.textTitle}>Type: {type}</Text>
         </View>
-      </TouchableOpacity>
+      </View>
     );
   }
 }
@@ -58,7 +53,7 @@ export default class ItemTrallerHorizontal extends Component<any, any> {
 const Styles = StyleSheet.create({
   container: {
     height: hp(25),
-    width: wp(90),
+    width: wp(100),
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.gray,
@@ -68,9 +63,6 @@ const Styles = StyleSheet.create({
     marginVertical: hp('2'),
   },
 
-  Styleimg: {
-    height: hp('20'),
-  },
   textTitle: {
     color: Colors.white,
     fontSize: wp(4),

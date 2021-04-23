@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+  Alert,
+} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -8,6 +15,8 @@ import ItemCast from '../Cast/ItemCast';
 import {connect} from 'react-redux';
 import {homeAction} from '../../../../redux/movie/action';
 import {Colors} from '../../../../configs/style';
+import {isEmpty} from 'lodash';
+import {createService} from '../../../../configs/api';
 class ModalCast extends Component<any, any> {
   constructor(props) {
     super(props);
@@ -17,14 +26,18 @@ class ModalCast extends Component<any, any> {
   componentDidMount() {
     this.props.getAllActors(this.props.idMovie);
   }
-  renderItem = item => {
-    return (
-      <ItemCast
-        original_name={item.original_name}
-        profile_path={item.profile_path}
-        character={item.character}
-      />
-    );
+  renderItem = ({item}) => {
+    if (item == isEmpty) {
+      console.log('null');
+    } else {
+      return (
+        <ItemCast
+          original_name={item.original_name}
+          profile_path={item.profile_path}
+          character={item.character}
+        />
+      );
+    }
   };
 
   render() {
@@ -32,7 +45,7 @@ class ModalCast extends Component<any, any> {
       <View style={Styles.container}>
         <FlatList
           data={this.props.allActor.cast}
-          renderItem={({item}) => this.renderItem(item)}
+          renderItem={this.renderItem}
           keyExtractor={item => item.order}
         />
       </View>

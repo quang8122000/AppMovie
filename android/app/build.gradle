@@ -136,7 +136,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-    }
+        multiDexEnabled true    }
+
     splits {
         abi {
             reset()
@@ -146,6 +147,12 @@ android {
         }
     }
     signingConfigs {
+        release {
+        storeFile file('my-upload-key.keystore')
+        storePassword 'your_key_store_password'
+         keyAlias 'your_key_alias'
+         keyPassword 'your_key_file_alias_password'
+       }
         debug {
             storeFile file('debug.keystore')
             storePassword 'android'
@@ -184,6 +191,9 @@ android {
 }
 
 dependencies {
+    // implementation(compile project(':react-native-jitsi-meet')) {
+    //     exclude group: 'com.facebook.react',module:'react-native-linear-gradient' // <<<---- this line was added
+    // }
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
@@ -224,7 +234,7 @@ apply from: file("../../node_modules/@react-native-community/cli-platform-androi
 project.ext.vectoricons = [
     iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf' ] // Name of the font files you want to copy
 ]
-
-apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
 

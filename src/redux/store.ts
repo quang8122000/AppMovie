@@ -3,13 +3,15 @@ import {persistStore, persistReducer} from 'redux-persist';
 import rootEpic from './rootEpic';
 import rootReducers from '../redux/rootReducer';
 import AsyncStorage from '@react-native-community/async-storage';
+import {createWhitelistFilter} from 'redux-persist-transform-filter';
 
 import {createEpicMiddleware} from 'redux-observable';
+const movie = createWhitelistFilter('movie', ['allMovie']);
 const persistConfig: any = {
   key: 'root',
-  transforms: [],
+  // transforms: [movie],
   storage: AsyncStorage,
-  timeout: 0,
+  blacklist: ['movie', 'loading'],
 };
 const epicMiddleware = createEpicMiddleware();
 const persistedReducer = persistReducer(persistConfig, rootReducers);

@@ -27,6 +27,7 @@ class NewMovieScreen extends Component<any, any> {
       }
     });
   }
+
   onPress = item => {
     this.props.navigation.navigate('Details', item);
   };
@@ -51,12 +52,12 @@ class NewMovieScreen extends Component<any, any> {
   }
 
   render() {
-    const {allNewMovie} = this.props;
+    // const {allNewMovie} = this.props;
     return (
       <View style={Styles.container}>
         <Text style={Styles.textTitle}>Popular Movie</Text>
         <FlatList
-          data={allNewMovie.results}
+          data={this.props.allNewMovie.results}
           renderItem={({item, index}) => this.rederItem(item, index)}
           keyExtractor={item => item.id}
         />

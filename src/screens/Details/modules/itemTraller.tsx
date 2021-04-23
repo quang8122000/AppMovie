@@ -15,6 +15,8 @@ export default class ItemTraller extends Component<any, any> {
 
   render() {
     const {source, name, size, type} = this.props;
+    console.log('source', source);
+
     return (
       <View style={Styles.container}>
         <YoutubePlayer
