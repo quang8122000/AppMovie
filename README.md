@@ -1,4 +1,4 @@
-# Week1_{Vinh Quang}
+# Week1\_{Vinh Quang}
 
 **AppMovie** shows the latest movies currently playing in theaters. The app utilizes the Movie Database API to display images and basic information about these movies to the user.
 
@@ -8,41 +8,39 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-* [Done] User can view a list of movies (title, poster image, and overview) currently playing in theaters from the Movie Database API.
-* [Done] List item with the [RecyclerView](https://guides.codepath.com/android/Using-the-RecyclerView).
-* [Done] For each movie displayed, user can see the following details:
-  * [Done] Title, Poster Image, Overview (Portrait mode)
-  * [Done] Title, Backdrop Image, Overview (Landscape mode)
+- [x] User can view a list of movies (title, poster image, and overview) currently playing in theaters from the Movie Database API.
+- [x] List item with the [RecyclerView](https://guides.codepath.com/android/Using-the-RecyclerView).
+- [x] For each movie displayed, user can see the following details:
+  - [x] Title, Poster Image, Overview (Portrait mode)
+  - [x] Title, Backdrop Image, Overview (Landscape mode)
 
 The following **optional** features are implemented:
 
-* [Done] Display a nice default [placeholder graphic](https://guides.codepath.com/android/Displaying-Images-with-the-Glide-Library) for each image during loading.
-<a href="https://imgflip.com/gif/59y156">via Imgflip</a>
+- [] Display a nice default [placeholder graphic](https://guides.codepath.com/android/Displaying-Images-with-the-Glide-Library) for each image during loading.
+
 The following **bonus** features are implemented:
 
-* [Done] Allow user to view details of the movie including ratings and popularity within a separate activity or dialog fragment.
-* [X] When viewing a popular movie (i.e. a movie voted for more than 5 stars) the video should show the full backdrop image as the layout.  Uses [Heterogenous RecyclerView](http://guides.codepath.com/android/Heterogenous-Layouts-inside-RecyclerView) to show different layouts.
-* [Done] Allow video trailers to be played in full-screen using the YouTubePlayerView.
-    * [Done] Overlay a play icon for videos that can be played.
-    * [X] More popular movies should start a separate activity that plays the video immediately.
-    * [X] Less popular videos rely on the detail page should show ratings and a YouTube preview.
-* [ ] Apply the popular [Butterknife annotation library](http://guides.codepath.com/android/Reducing-View-Boilerplate-with-Butterknife) to reduce boilerplate code.
-* [X] Apply rounded corners for the poster or background images using [Glide transformations](https://bumptech.github.io/glide/doc/transformations.html)
+- [x] Allow user to view details of the movie including ratings and popularity within a separate activity or dialog fragment.
+- [] When viewing a popular movie (i.e. a movie voted for more than 5 stars) the video should show the full backdrop image as the layout. Uses [Heterogenous RecyclerView](http://guides.codepath.com/android/Heterogenous-Layouts-inside-RecyclerView) to show different layouts.
+- [x] Allow video trailers to be played in full-screen using the YouTubePlayerView.
+  - [x] Overlay a play icon for videos that can be played.
+  - [] More popular movies should start a separate activity that plays the video immediately.
+  - [] Less popular videos rely on the detail page should show ratings and a YouTube preview.
+- [ ] Apply the popular [Butterknife annotation library](http://guides.codepath.com/android/Reducing-View-Boilerplate-with-Butterknife) to reduce boilerplate code.
+- [] Apply rounded corners for the poster or background images using [Glide transformations](https://bumptech.github.io/glide/doc/transformations.html)
 
 The following **additional** features are implemented:
 
-* [Done] List anything else that you can get done to improve the app functionality!
+- [x] List anything else that you can get done to improve the app functionality!
   - Search for videos by name use SearchView
- 
+
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
 ![59y156](https://user-images.githubusercontent.com/67914761/118588312-59a10880-b7c8-11eb-864e-dc5436c73971.gif)
 
-<a href="https://i.imgur.com/PY3ZDEl.gifv"><img src="https://i.imgur.com/PY3ZDEl.gif" title="Video Walkthrough 1" /></a>
-<a href="https://i.imgur.com/8U7d72R.gifv"><img src="https://i.imgur.com/8U7d72R.gif" title="Video Walkthrough 2" /></a>
-<a href="https://i.imgur.com/3XLLZXa.gifv"><img src="https://i.imgur.com/3XLLZXa.gif" title="Video Walkthrough 3" /></a>
+
 
 GIF created with [AZ Screen Recorder](https://play.google.com/store/apps/details?id=com.hecorat.screenrecorder.free&hl=en).
 
