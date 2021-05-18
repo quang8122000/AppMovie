@@ -4,7 +4,6 @@ import {View, Image, StyleSheet} from 'react-native';
 import HomeScreen from '../screens/Home/HomeScreen';
 import NewMovieScreen from '../screens/MovieHot/NewMovieScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,

@@ -13,7 +13,7 @@ export const getALLMovies = ($action: any) => {
     mergeMap((act: any) => {
       console.log('payload', act.payload);
       return from(
-        $axios.api.get(
+        $axios.api.get( 
           `/3/discover/movie?api_key=2c4916f2a93252ac7140372c475509c6&primary_release_year=${
             act?.payload?.year || moment().format('YYYY')
           }&sort_by=revenue.desc&page=${act?.payload?.page || 1}`,

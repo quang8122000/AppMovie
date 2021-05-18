@@ -15,11 +15,7 @@ export const createService = () => {
       if (devices?.token) {
         config.headers.Authorization = `Bearer ${devices?.token}`;
       }
-      // if(!!App.location.longitude && !!App.location.latitude && devices?.deviceId){
-      //   config.headers.long = App.location.longitude;
-      //   config.headers.lat = App.location.latitude;
-      //   config.headers.deviceId = devices?.deviceId
-      // }
+
       console.log('config', config);
 
       return config;
@@ -33,10 +29,6 @@ export const createService = () => {
       console.log('response', response);
       return response;
     },
-    // onResponseError(error) {
-    //   console.log('error', error?.response ? error?.response : error);
-    //   return error;
-    // },
   });
 };
 export const $axios = {api};
