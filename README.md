@@ -37,7 +37,7 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-<a href="https://imgflip.com/gif/59y156"><img src="https://imgflip.com/gif/59y156.gif" title="Video Walkthrough 4" /></a>
+![59y156](https://user-images.githubusercontent.com/67914761/118588312-59a10880-b7c8-11eb-864e-dc5436c73971.gif)
 
 <a href="https://i.imgur.com/PY3ZDEl.gifv"><img src="https://i.imgur.com/PY3ZDEl.gif" title="Video Walkthrough 1" /></a>
 <a href="https://i.imgur.com/8U7d72R.gifv"><img src="https://i.imgur.com/8U7d72R.gif" title="Video Walkthrough 2" /></a>
