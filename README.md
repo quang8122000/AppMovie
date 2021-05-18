@@ -16,8 +16,8 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-* [X] Display a nice default [placeholder graphic](https://guides.codepath.com/android/Displaying-Images-with-the-Glide-Library) for each image during loading.
-
+* [Done] Display a nice default [placeholder graphic](https://guides.codepath.com/android/Displaying-Images-with-the-Glide-Library) for each image during loading.
+<a href="https://imgflip.com/gif/59y156">via Imgflip</a>
 The following **bonus** features are implemented:
 
 * [Done] Allow user to view details of the movie including ratings and popularity within a separate activity or dialog fragment.
