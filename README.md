@@ -43,7 +43,8 @@ Here's a walkthrough of implemented user stories:
 <a href="https://i.imgur.com/3XLLZXa.gifv"><img src="https://i.imgur.com/3XLLZXa.gif" title="Video Walkthrough 3" /></a>
 
 GIF created with [AZ Screen Recorder](https://play.google.com/store/apps/details?id=com.hecorat.screenrecorder.free&hl=en).
-<div style="width:260px;max-width:100%;"><div style="height:0;padding-bottom:221.92%;position:relative;"><iframe width="260" height="577" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/59y156"></iframe></div><p><a href="https://imgflip.com/gif/59y156">via Imgflip</a></p></div>
+<a href="https://imgflip.com/gif/59y156"><img src="https://imgflip.com/gif/59y156.git" title="Video Walkthrough 4" /></a>
+
 ## Notes
 
 Describe any challenges encountered while building the app.
